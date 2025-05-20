@@ -10,7 +10,7 @@ set -e
 
 printf "Param 1: $1\n"
 
-LOCATION="eastus2"
+LOCATION="canadacentral"
 printf "Location: $LOCATION\n"
 
 # Check if user is logged into Azure CLI
@@ -87,7 +87,7 @@ az cosmosdb sql container create \
     --account-name $COMSOSDB_NAME \
     --database-name stocksdb \
     --name stocks \
-    --partition-key-path /symbol
+    --partition-key-path "//symbol"
 
 printf "Get storage connection string\n"
 
